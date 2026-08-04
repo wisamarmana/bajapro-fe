@@ -1,0 +1,321 @@
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Role {
+  id          Int          @id @default(autoincrement())
+  roleName    String       @map("role_name")
+  isActive    Boolean      @default(true) @map("isactive")
+  createdAt   DateTime     @default(now()) @map("created_at")
+  updatedAt   DateTime     @updatedAt @map("updated_at")
+  users       User[]
+  permissions Permission[] @relation("PermissionToRole")
+
+  @@map("m_role")
+}
+
+model Class {
+  id         Int      @id @default(autoincrement())
+  teacherId  Int?     @map("teacher_id") // Loose reference to User.id
+  className  String   @map("class_name")
+  schoolName String   @map("school_name")
+  classCode  String   @unique @map("class_code")
+  isActive   Boolean  @default(true) @map("isactive")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+  users      User[]
+
+  @@map("m_class")
+}
+
+model User {
+  id                Int      @id @default(autoincrement())
+  roleId            Int      @map("role_id")
+  classId           Int?     @map("class_id")
+  name              String
+  email             String   @unique
+  password          String
+  isApprovedByAdmin Int      @default(0) @map("is_approved_by_admin")
+  instansiSekolah   String   @map("instansi_sekolah")
+  nip               String?  @map("nip")
+  isActive          Boolean  @default(true) @map("isactive")
+  createdAt         DateTime @default(now()) @map("created_at")
+  updatedAt         DateTime @updatedAt @map("updated_at")
+
+  role              Role              @relation(fields: [roleId], references: [id])
+  class             Class?            @relation(fields: [classId], references: [id])
+  studentCourses    StudentCourse[]
+  studentProgresses StudentProgress[]
+  wonderingScores   WonderingScore[]
+  codeAnswers       CodeAnswer[]
+  essayAnswers      EssayAnswer[]
+  codeHistoryLogs   CodeHistoryLog[]
+  loginLogs         UserLoginLog[]
+
+  @@map("m_users")
+}
+
+model Course {
+  id             Int               @id @default(autoincrement())
+  courseName     String            @map("course_name")
+  description    String
+  imgThumbnail   String?           @map("img_thumbnail")
+  published      Int               @default(0)
+  isActive       Boolean           @default(true) @map("isactive")
+  createdAt      DateTime          @default(now()) @map("created_at")
+  updatedAt      DateTime          @updatedAt @map("updated_at")
+  lessons        Lesson[]
+  studentCourses StudentCourse[]
+  progresses     StudentProgress[]
+
+  @@map("m_course")
+}
+
+model Level {
+  id          Int      @id @default(autoincrement())
+  levelName   String   @map("level_name")
+  description String
+  isActive    Boolean  @default(true) @map("isactive")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+  lessons     Lesson[]
+
+  @@map("m_level")
+}
+
+model Lesson {
+  id           Int      @id @default(autoincrement())
+  courseId     Int      @map("course_id")
+  levelId      Int      @map("level_id")
+  title        String
+  description  String
+  position     Int
+  imgThumbnail String?  @map("img_thumbnail")
+  published    Int      @default(0)
+  isActive     Boolean  @default(true) @map("isactive")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  course     Course      @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  level      Level       @relation(fields: [levelId], references: [id])
+  subLessons SubLesson[]
+
+  @@map("m_lesson")
+}
+
+model SubLesson {
+  id            Int      @id @default(autoincrement())
+  lessonId      Int      @map("lesson_id")
+  title         String
+  orderPosition Int      @map("order_position")
+  isActive      Boolean  @default(true) @map("isactive")
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  lesson          Lesson            @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  materials       Material[]
+  codeQuestions   CodeQuestion[]
+  progresses      StudentProgress[]
+  wonderingScores WonderingScore[]
+
+  @@map("m_sub_lesson")
+}
+
+model Material {
+  id              Int      @id @default(autoincrement())
+  subLessonId     Int      @map("sub_lesson_id")
+  title           String
+  materials       String   @db.Text
+  urlVideo        String?  @map("url_video")
+  contentPosition Int      @map("content_position")
+  promptLim       String?  @map("prompt_lim")
+  published       Int      @default(1)
+  isActive        Boolean  @default(true) @map("isactive")
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  subLesson SubLesson @relation(fields: [subLessonId], references: [id], onDelete: Cascade)
+
+  @@map("m_materials")
+}
+
+model CodeQuestion {
+  id           Int      @id @default(autoincrement())
+  subLessonId  Int      @map("sub_lesson_id")
+  codeQuestion String   @map("code_question") @db.Text
+  image        String?
+  score        Int      @default(30)
+  hint         String?
+  isActive     Boolean  @default(true) @map("isactive")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  subLesson       SubLesson        @relation(fields: [subLessonId], references: [id], onDelete: Cascade)
+  essayQuestions  EssayQuestion[]
+  codeAnswers     CodeAnswer[]
+  codeHistoryLogs CodeHistoryLog[]
+
+  @@map("t_code_question")
+}
+
+model EssayQuestion {
+  id             Int      @id @default(autoincrement())
+  subLessonId    Int?     @map("sub_lesson_id")
+  codeQuestionId Int?     @map("code_question_id")
+  essayQuestion  String   @map("essay_question") @db.Text
+  answer         String   @db.Text
+  answer2        String?  @map("answer_2") @db.Text
+  answer3        String?  @map("answer_3") @db.Text
+  answer4        String?  @map("answer_4") @db.Text
+  isActive       Boolean  @default(true) @map("isactive")
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  codeQuestion CodeQuestion? @relation(fields: [codeQuestionId], references: [id], onDelete: Cascade)
+  essayAnswers EssayAnswer[]
+
+  @@map("t_essay_question")
+}
+
+model StudentCourse {
+  id         Int      @id @default(autoincrement())
+  studentId  Int      @map("student_id")
+  courseId   Int      @map("course_id")
+  totalScore Int      @default(0) @map("total_score")
+  badgeId    Int?     @map("badge_id")
+  isActive   Boolean  @default(true) @map("isactive")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  student User   @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  course  Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  badge   Badge? @relation(fields: [badgeId], references: [id])
+
+  @@map("t_student_course")
+}
+
+model Badge {
+  id             Int             @id @default(autoincrement())
+  name           String
+  image          String
+  minScore       Int             @map("min_score")
+  maxScore       Int             @map("max_score")
+  isActive       Boolean         @default(true) @map("isactive")
+  createdAt      DateTime        @default(now()) @map("created_at")
+  updatedAt      DateTime        @updatedAt @map("updated_at")
+  studentCourses StudentCourse[]
+
+  @@map("m_badge_settings")
+}
+
+model StudentProgress {
+  id          Int      @id @default(autoincrement())
+  userId      Int      @map("user_id")
+  courseId    Int      @map("course_id")
+  subLessonId Int      @map("sub_lesson_id")
+  status      String   @default("pending") // completed, in_progress, pending
+  isActive    Boolean  @default(true) @map("isactive")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  student   User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course    Course    @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  subLesson SubLesson @relation(fields: [subLessonId], references: [id], onDelete: Cascade)
+
+  @@map("t_student_progress")
+}
+
+model WonderingScore {
+  id          Int      @id @default(autoincrement())
+  userId      Int      @map("user_id")
+  subLessonId Int      @map("sub_lesson_id")
+  score       Int      @default(0)
+  isActive    Boolean  @default(true) @map("isactive")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  student   User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  subLesson SubLesson @relation(fields: [subLessonId], references: [id], onDelete: Cascade)
+
+  @@map("t_wondering_score")
+}
+
+model CodeAnswer {
+  id             Int      @id @default(autoincrement())
+  userId         Int      @map("user_id")
+  codeQuestionId Int      @map("code_question_id")
+  isCodeRight    Boolean  @default(false) @map("is_code_right")
+  exploringScore Int      @default(0) @map("exploring_score")
+  isActive       Boolean  @default(true) @map("isactive")
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  student      User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  codeQuestion CodeQuestion @relation(fields: [codeQuestionId], references: [id], onDelete: Cascade)
+
+  @@map("t_code_answer")
+}
+
+model EssayAnswer {
+  id                  Int      @id @default(autoincrement())
+  userId              Int      @map("user_id")
+  essayQuestionId     Int      @map("essay_question_id")
+  answer              String   @db.Text
+  konteksPenjelasan   Int      @default(0) @map("konteks_penjelasan")
+  keruntutan          Int      @default(0) @map("keruntutan")
+  kebenaran           Int      @default(0) @map("kebenaran")
+  teacherNotes        String?  @map("teacher_notes") @db.Text
+  isApprovedByTeacher Int?     @map("is_approved_by_teacher") // null = pending, 1 = approved, 0 = rejected
+  isActive            Boolean  @default(true) @map("isactive")
+  createdAt           DateTime @default(now()) @map("created_at")
+  updatedAt           DateTime @updatedAt @map("updated_at")
+
+  student       User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  essayQuestion EssayQuestion @relation(fields: [essayQuestionId], references: [id], onDelete: Cascade)
+
+  @@map("t_essay_answer")
+}
+
+model CodeHistoryLog {
+  id             Int      @id @default(autoincrement())
+  userId         Int      @map("user_id")
+  codeQuestionId Int      @map("code_question_id")
+  timeCount      Int      @default(0) @map("time_count")
+  message        String   @db.Text
+  isError        Boolean  @default(false) @map("is_error")
+  isActive       Boolean  @default(true) @map("isactive")
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  student      User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  codeQuestion CodeQuestion @relation(fields: [codeQuestionId], references: [id], onDelete: Cascade)
+
+  @@map("t_code_history_logs")
+}
+
+model Permission {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  isActive  Boolean  @default(true) @map("isactive")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  roles     Role[]   @relation("PermissionToRole")
+
+  @@map("m_permission")
+}
+
+model UserLoginLog {
+  id        Int      @id @default(autoincrement())
+  userId    Int      @map("user_id")
+  loginTime DateTime @default(now()) @map("login_time")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("t_user_login_logs")
+}

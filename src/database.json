@@ -1,0 +1,2031 @@
+{
+  "roles": [
+    {
+      "id": "1",
+      "role_name": "Admin",
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "2",
+      "role_name": "Pengajar",
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "3",
+      "role_name": "Pelajar",
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    }
+  ],
+  "class": [
+    {
+      "id": "1",
+      "teacher_id": 3,
+      "class_name": "Kelas XII RPL A",
+      "school_name": "SMKN 1 Malang",
+      "class_code": "RPL12A",
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "2",
+      "teacher_id": 4,
+      "class_name": "Kelas XII RPL B",
+      "school_name": "SMKN 1 Malang",
+      "class_code": "RPL12B",
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "3",
+      "teacher_id": 3,
+      "class_name": "Kelas XI TKJ A",
+      "school_name": "SMKN 1 Malang",
+      "class_code": "TKJ11A",
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "class_name": "coba",
+      "school_name": "SMA COBA",
+      "class_code": "S1V43G",
+      "id": "56UZdi530Ew"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "role_id": 1,
+      "class_id": null,
+      "name": "Budi Santoso",
+      "email": "budi@admin.id",
+      "password": "123",
+      "is_approved_by_admin": 1,
+      "instansi_sekolah": "SMKN 1 Malang",
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "2",
+      "role_id": 1,
+      "class_id": null,
+      "name": "Siti Aminah",
+      "email": "siti@admin.id",
+      "password": "123",
+      "is_approved_by_admin": 1,
+      "instansi_sekolah": "SMKN 1 Malang",
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "3",
+      "role_id": 2,
+      "class_id": null,
+      "name": "Andi Pratama",
+      "email": "andi@guru.id",
+      "password": "123",
+      "is_approved_by_admin": 1,
+      "instansi_sekolah": "SMKN 1 Malang",
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "4",
+      "role_id": 2,
+      "class_id": null,
+      "name": "Bagas Dwi",
+      "email": "bagas@guru.id",
+      "password": "123",
+      "is_approved_by_admin": 1,
+      "instansi_sekolah": "SMKN 1 Malang",
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "5",
+      "role_id": 3,
+      "class_id": 1,
+      "name": "Citra Lestari",
+      "email": "citra@siswa.id",
+      "password": "123",
+      "is_approved_by_admin": 1,
+      "instansi_sekolah": "SMKN 1 Malang",
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "6",
+      "role_id": 3,
+      "class_id": 1,
+      "name": "Dewi Sartika",
+      "email": "dewi@siswa.id",
+      "password": "123",
+      "is_approved_by_admin": 1,
+      "instansi_sekolah": "SMKN 1 Malang",
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "7",
+      "role_id": 3,
+      "class_id": 2,
+      "name": "Eko Purnomo",
+      "email": "eko@siswa.id",
+      "password": "123",
+      "is_approved_by_admin": 1,
+      "instansi_sekolah": "SMKN 1 Malang",
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "8",
+      "role_id": 3,
+      "class_id": 2,
+      "name": "Fajar Nugroho",
+      "email": "fajar@siswa.id",
+      "password": "123",
+      "is_approved_by_admin": 0,
+      "instansi_sekolah": "SMKN 1 Malang",
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "9",
+      "role_id": 3,
+      "class_id": 3,
+      "name": "Galih Santosa",
+      "email": "galih@siswa.id",
+      "password": "123",
+      "is_approved_by_admin": 1,
+      "instansi_sekolah": "SMKN 1 Malang",
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "role_id": 2,
+      "class_id": null,
+      "name": "Yolanda",
+      "email": "yolandaeka57@gmail.com",
+      "password": "12345678",
+      "is_approved_by_admin": 1,
+      "instansi_sekolah": "Sekolah",
+      "isactive": true,
+      "created_at": "2026-05-11",
+      "updated_at": "2026-05-11",
+      "id": "vtsOFxr8_AQ"
+    },
+    {
+      "role_id": 2,
+      "class_id": null,
+      "name": "Valeri",
+      "email": "valeri@gmail.com",
+      "password": "23456789",
+      "is_approved_by_admin": 0,
+      "instansi_sekolah": "SMKN 9 MALANG",
+      "isactive": true,
+      "created_at": "2026-05-25",
+      "updated_at": "2026-05-25",
+      "id": "wUqJ0E4Zx2w"
+    }
+  ],
+  "badges": [
+    {
+      "id": "1",
+      "name": "Bronze Coder",
+      "image": "/assets/gamification/lv 1.png",
+      "min_score": 50,
+      "max_score": 69,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "2",
+      "name": "Silver Hacker",
+      "image": "/assets/gamification/lv 2.png",
+      "min_score": 70,
+      "max_score": 84,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "3",
+      "name": "Gold Master",
+      "image": "/assets/gamification/lv 3.png",
+      "min_score": 85,
+      "max_score": 100,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "4",
+      "name": "Diamond Master",
+      "image": "/assets/gamification/lv 4.png",
+      "min_score": 100,
+      "max_score": 200,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "5",
+      "name": "Ruby Master",
+      "image": "/assets/gamification/lv 5.png",
+      "min_score": 200,
+      "max_score": 500,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "6",
+      "name": "Sapphire Master",
+      "image": "/assets/gamification/lv 6.png",
+      "min_score": 500,
+      "max_score": 1000,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    }
+  ],
+  "courses": [
+    {
+      "id": "1",
+      "course_name": "Frontend Web Development",
+      "description": "HTML, CSS, JS",
+      "img_thumbnail": "frontend.png",
+      "published": 1,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "2",
+      "course_name": "Backend Development",
+      "description": "NodeJS & Database",
+      "img_thumbnail": "backend.png",
+      "published": 1,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "3",
+      "course_name": "Data Science Basic",
+      "description": "Python for Data",
+      "img_thumbnail": "python.png",
+      "published": 0,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "4",
+      "course_name": "Java Programming",
+      "description": "Dasar Pemrograman Java",
+      "img_thumbnail": "java.png",
+      "published": 0,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "course_name": "Course coba",
+      "description": "Yaaa",
+      "img_thumbnail": "",
+      "id": "dnb7pGb4ncE"
+    }
+  ],
+  "levels": [
+    {
+      "id": "1",
+      "level_name": "Beginner",
+      "description": "Pemula",
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "2",
+      "level_name": "Intermediate",
+      "description": "Menengah",
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "3",
+      "level_name": "Advanced",
+      "description": "Mahir",
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    }
+  ],
+  "lessons": [
+    {
+      "id": "1",
+      "course_id": 1,
+      "level_id": 1,
+      "title": "Pengenalan HTML",
+      "description": "Dasar HTML",
+      "position": 1,
+      "img_thumbnail": "html.png",
+      "published": 1,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "2",
+      "course_id": 1,
+      "level_id": 2,
+      "title": "Dasar CSS",
+      "description": "Styling Web",
+      "position": 1,
+      "img_thumbnail": "css.png",
+      "published": 1,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "3",
+      "course_id": 1,
+      "level_id": 3,
+      "title": "Advanced Web",
+      "description": "Optimization",
+      "position": 1,
+      "img_thumbnail": "adv.png",
+      "published": 1,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "4",
+      "course_id": 2,
+      "level_id": 1,
+      "title": "Pengenalan NodeJS",
+      "description": "Dasar NodeJS",
+      "position": 1,
+      "img_thumbnail": "node.png",
+      "published": 1,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "5",
+      "course_id": 2,
+      "level_id": 2,
+      "title": "Pengenalan Database",
+      "description": "SQL Dasar",
+      "position": 2,
+      "img_thumbnail": "sql.png",
+      "published": 1,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "6",
+      "course_id": 3,
+      "level_id": 1,
+      "title": "Python Dasar",
+      "description": "Syntax Python",
+      "position": 1,
+      "img_thumbnail": "py.png",
+      "published": 0,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "7",
+      "course_id": 4,
+      "level_id": 1,
+      "title": "Java Dasar",
+      "description": "Syntax Java",
+      "position": 1,
+      "img_thumbnail": "java.png",
+      "published": 0,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    }
+  ],
+  "sublessons": [
+    {
+      "id": "1",
+      "lesson_id": 1,
+      "title": "Tag Heading",
+      "order_position": 1,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "2",
+      "lesson_id": 1,
+      "title": "Tag Paragraf",
+      "order_position": 2,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "3",
+      "lesson_id": 1,
+      "title": "Tag Gambar & Link",
+      "order_position": 3,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "4",
+      "lesson_id": 2,
+      "title": "Selector CSS",
+      "order_position": 1,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "5",
+      "lesson_id": 2,
+      "title": "Color & Background",
+      "order_position": 2,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "6",
+      "lesson_id": 3,
+      "title": "CSS Grid & Flexbox",
+      "order_position": 1,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "7",
+      "lesson_id": 4,
+      "title": "Setup NodeJS",
+      "order_position": 1,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "8",
+      "lesson_id": 4,
+      "title": "Membuat REST API",
+      "order_position": 2,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "9",
+      "lesson_id": 5,
+      "title": "SELECT Query",
+      "order_position": 1,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "10",
+      "lesson_id": 5,
+      "title": "JOIN Query",
+      "order_position": 2,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    }
+  ],
+  "materials": [
+    {
+      "id": "1",
+      "sub_lesson_id": 1,
+      "title": "Video Pembelajaran - Tag Heading",
+      "materials": "<p>Heading dalam HTML digunakan untuk mendefinisikan judul dan sub-judul pada halaman web. HTML menyediakan enam level heading, yaitu <code>h1</code> sampai <code>h6</code>.</p><blockquote>Heading yang tepat sangat penting untuk SEO dan aksesibilitas website Anda.</blockquote>",
+      "url_video": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "content_position": 1,
+      "prompt_lim": null,
+      "published": 1,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "11",
+      "sub_lesson_id": 1,
+      "title": "Penjelasan Tag Heading",
+      "materials": "<h3>Struktur Heading HTML</h3><p>Pada kehidupan sehari-hari kita selalu mengambil keputusan dengan mempertimbangkan berbagai hal/kondisi-kondisi. Heading digunakan untuk membuat struktur konten yang jelas dan terorganisir.</p><p>Berikut adalah contoh penggunaan heading:</p><pre><code>&lt;h1&gt;Judul Utama&lt;/h1&gt;\n&lt;h2&gt;Sub Judul&lt;/h2&gt;\n&lt;h3&gt;Sub Sub Judul&lt;/h3&gt;</code></pre><p>Setiap halaman sebaiknya hanya memiliki satu <code>&lt;h1&gt;</code> sebagai judul utama. Heading lainnya digunakan secara hierarkis untuk membagi konten menjadi bagian-bagian yang lebih kecil.</p><blockquote>Jangan gunakan heading hanya untuk membuat teks menjadi besar atau tebal. Gunakan CSS untuk styling!</blockquote>",
+      "url_video": null,
+      "content_position": 2,
+      "prompt_lim": null,
+      "published": 1,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "12",
+      "sub_lesson_id": 1,
+      "title": "Latihan Praktik Heading",
+      "materials": "<h3>Praktik Membuat Heading</h3><p>Sekarang saatnya Anda mempraktikkan penggunaan tag heading. Perhatikan contoh kode berikut:</p><pre><code>&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n  &lt;title&gt;Latihan Heading&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  &lt;h1&gt;Selamat Datang&lt;/h1&gt;\n  &lt;h2&gt;Tentang Kami&lt;/h2&gt;\n  &lt;p&gt;Ini adalah paragraf pertama.&lt;/p&gt;\n  &lt;h2&gt;Layanan Kami&lt;/h2&gt;\n  &lt;h3&gt;Web Development&lt;/h3&gt;\n  &lt;h3&gt;Mobile Development&lt;/h3&gt;\n&lt;/body&gt;\n&lt;/html&gt;</code></pre><p>Perhatikan bahwa heading disusun secara hierarkis dari <code>h1</code> (terbesar) sampai <code>h6</code> (terkecil). Ini membantu mesin pencari memahami struktur konten Anda.</p>",
+      "url_video": null,
+      "content_position": 3,
+      "prompt_lim": null,
+      "published": 1,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "2",
+      "sub_lesson_id": 2,
+      "title": "Materi Paragraf",
+      "materials": "<p>Tag p digunakan untuk menulis paragraf di HTML.</p>",
+      "url_video": "https://youtube.com/v2",
+      "content_position": 1,
+      "prompt_lim": null,
+      "published": 1,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "3",
+      "sub_lesson_id": 3,
+      "title": "Materi Gambar & Link",
+      "materials": "<p>Tag img dan a untuk menampilkan gambar dan tautan.</p>",
+      "url_video": "https://youtube.com/v3",
+      "content_position": 1,
+      "prompt_lim": null,
+      "published": 1,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "4",
+      "sub_lesson_id": 4,
+      "title": "Materi Selector CSS",
+      "materials": "<p>Selector digunakan untuk memilih elemen yang akan di-style.</p>",
+      "url_video": "https://youtube.com/v4",
+      "content_position": 1,
+      "prompt_lim": null,
+      "published": 1,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "5",
+      "sub_lesson_id": 5,
+      "title": "Materi Color",
+      "materials": "<p>CSS Color dan Background untuk mewarnai elemen.</p>",
+      "url_video": "https://youtube.com/v5",
+      "content_position": 1,
+      "prompt_lim": null,
+      "published": 1,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "6",
+      "sub_lesson_id": 6,
+      "title": "Materi Flexbox",
+      "materials": "<p>Flexbox untuk layout satu dimensi secara responsif.</p>",
+      "url_video": "https://youtube.com/v6",
+      "content_position": 1,
+      "prompt_lim": null,
+      "published": 1,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "7",
+      "sub_lesson_id": 7,
+      "title": "Materi Setup NodeJS",
+      "materials": "<p>Cara instalasi NodeJS dan NPM di komputer.</p>",
+      "url_video": "https://youtube.com/v7",
+      "content_position": 1,
+      "prompt_lim": null,
+      "published": 1,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "8",
+      "sub_lesson_id": 8,
+      "title": "Materi REST API",
+      "materials": "<p>Membuat REST API sederhana menggunakan Express.js.</p>",
+      "url_video": "https://youtube.com/v8",
+      "content_position": 1,
+      "prompt_lim": null,
+      "published": 1,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "9",
+      "sub_lesson_id": 9,
+      "title": "Materi SELECT Query",
+      "materials": "<p>Perintah SELECT untuk mengambil data dari tabel.</p>",
+      "url_video": "https://youtube.com/v9",
+      "content_position": 1,
+      "prompt_lim": null,
+      "published": 1,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "10",
+      "sub_lesson_id": 10,
+      "title": "Materi JOIN Query",
+      "materials": "<p>JOIN untuk menggabungkan data dari beberapa tabel.</p>",
+      "url_video": "https://youtube.com/v10",
+      "content_position": 1,
+      "prompt_lim": null,
+      "published": 1,
+      "isactive": true,
+      "created_at": "2025-01-01",
+      "updated_at": "2025-01-01",
+      "user_create": 1,
+      "user_update": 1
+    }
+  ],
+  "t_student_course": [
+    {
+      "id": "1",
+      "student_id": 5,
+      "course_id": 1,
+      "total_score": 0,
+      "badge_id": null,
+      "isactive": true,
+      "created_at": "2025-02-01",
+      "updated_at": "2025-02-01",
+      "user_create": 5,
+      "user_update": 5
+    },
+    {
+      "id": "2",
+      "student_id": 6,
+      "course_id": 1,
+      "total_score": 75,
+      "badge_id": 2,
+      "isactive": true,
+      "created_at": "2025-02-01",
+      "updated_at": "2025-02-01",
+      "user_create": 6,
+      "user_update": 6
+    },
+    {
+      "id": "3",
+      "student_id": 5,
+      "course_id": 2,
+      "total_score": 60,
+      "badge_id": 1,
+      "isactive": true,
+      "created_at": "2025-02-05",
+      "updated_at": "2025-02-05",
+      "user_create": 5,
+      "user_update": 5
+    },
+    {
+      "id": "4",
+      "student_id": 7,
+      "course_id": 2,
+      "total_score": 88,
+      "badge_id": 3,
+      "isactive": true,
+      "created_at": "2025-02-05",
+      "updated_at": "2025-02-05",
+      "user_create": 7,
+      "user_update": 7
+    },
+    {
+      "id": "5",
+      "student_id": 9,
+      "course_id": 1,
+      "total_score": 85,
+      "badge_id": 3,
+      "isactive": true,
+      "created_at": "2025-02-10",
+      "updated_at": "2025-02-10",
+      "user_create": 9,
+      "user_update": 9
+    },
+    {
+      "id": "6",
+      "student_id": 8,
+      "course_id": 3,
+      "total_score": 90,
+      "badge_id": 3,
+      "isactive": true,
+      "created_at": "2025-02-10",
+      "updated_at": "2025-02-10",
+      "user_create": 8,
+      "user_update": 8
+    }
+  ],
+  "t_student_progress": [
+    {
+      "id": "1",
+      "user_id": 5,
+      "course_id": 1,
+      "sub_lesson_id": 1,
+      "status": "completed",
+      "isactive": true,
+      "created_at": "2025-02-01",
+      "updated_at": "2025-02-01",
+      "user_create": 5,
+      "user_update": 5
+    },
+    {
+      "id": "2",
+      "user_id": 5,
+      "course_id": 1,
+      "sub_lesson_id": 2,
+      "status": "completed",
+      "isactive": true,
+      "created_at": "2025-02-02",
+      "updated_at": "2025-02-02",
+      "user_create": 5,
+      "user_update": 5
+    },
+    {
+      "id": "3",
+      "user_id": 5,
+      "course_id": 1,
+      "sub_lesson_id": 3,
+      "status": "in_progress",
+      "isactive": true,
+      "created_at": "2025-02-03",
+      "updated_at": "2025-02-03",
+      "user_create": 5,
+      "user_update": 5
+    },
+    {
+      "id": "4",
+      "user_id": 6,
+      "course_id": 1,
+      "sub_lesson_id": 1,
+      "status": "completed",
+      "isactive": true,
+      "created_at": "2025-02-01",
+      "updated_at": "2025-02-01",
+      "user_create": 6,
+      "user_update": 6
+    },
+    {
+      "id": "5",
+      "user_id": 6,
+      "course_id": 1,
+      "sub_lesson_id": 2,
+      "status": "in_progress",
+      "isactive": true,
+      "created_at": "2025-02-02",
+      "updated_at": "2025-02-02",
+      "user_create": 6,
+      "user_update": 6
+    },
+    {
+      "id": "6",
+      "user_id": 7,
+      "course_id": 2,
+      "sub_lesson_id": 7,
+      "status": "completed",
+      "isactive": true,
+      "created_at": "2025-02-05",
+      "updated_at": "2025-02-05",
+      "user_create": 7,
+      "user_update": 7
+    },
+    {
+      "id": "7",
+      "user_id": 7,
+      "course_id": 2,
+      "sub_lesson_id": 8,
+      "status": "pending",
+      "isactive": true,
+      "created_at": "2025-02-06",
+      "updated_at": "2025-02-06",
+      "user_create": 7,
+      "user_update": 7
+    },
+    {
+      "id": "8",
+      "user_id": 9,
+      "course_id": 1,
+      "sub_lesson_id": 1,
+      "status": "completed",
+      "isactive": true,
+      "created_at": "2025-02-10",
+      "updated_at": "2025-02-10",
+      "user_create": 9,
+      "user_update": 9
+    }
+  ],
+  "t_wondering_score": [
+    {
+      "id": "1",
+      "user_id": 5,
+      "sub_lesson_id": 1,
+      "score": 10,
+      "isactive": true,
+      "created_at": "2025-02-01",
+      "updated_at": "2025-02-01",
+      "user_create": 5,
+      "user_update": 5
+    },
+    {
+      "id": "2",
+      "user_id": 6,
+      "sub_lesson_id": 1,
+      "score": 75,
+      "isactive": true,
+      "created_at": "2025-02-01",
+      "updated_at": "2025-02-01",
+      "user_create": 6,
+      "user_update": 6
+    },
+    {
+      "id": "3",
+      "user_id": 7,
+      "sub_lesson_id": 7,
+      "score": 85,
+      "isactive": true,
+      "created_at": "2025-02-05",
+      "updated_at": "2025-02-05",
+      "user_create": 7,
+      "user_update": 7
+    }
+  ],
+  "t_generation_history": [
+    {
+      "id": "1",
+      "sub_lesson_id": 1,
+      "topic_title": "Pengenalan Tag Heading",
+      "result": "<p>Heading digunakan sebagai judul konten di HTML.</p>",
+      "generation_time": 1.2,
+      "isactive": true,
+      "created_at": "2025-02-01",
+      "updated_at": "2025-02-01",
+      "user_create": 3,
+      "user_update": 3
+    },
+    {
+      "id": "2",
+      "sub_lesson_id": 4,
+      "topic_title": "Selector CSS Dasar",
+      "result": "<p>Selector class dan id untuk menarget elemen spesifik.</p>",
+      "generation_time": 0.9,
+      "isactive": true,
+      "created_at": "2025-02-02",
+      "updated_at": "2025-02-02",
+      "user_create": 3,
+      "user_update": 3
+    }
+  ],
+  "code_question": [
+    {
+      "id": "1",
+      "sub_lesson_id": 3,
+      "code_question": "<p>Buatlah tag gambar dengan atribut src dan alt yang benar!</p>",
+      "image": null,
+      "score": 30,
+      "hint": "Gunakan tag img dengan atribut src dan alt.",
+      "isactive": true,
+      "created_at": "2025-01-10",
+      "updated_at": "2025-01-10",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "2",
+      "sub_lesson_id": 5,
+      "code_question": "<p>Tuliskan CSS untuk mengubah warna teks menjadi merah!</p>",
+      "image": null,
+      "score": 30,
+      "hint": "Gunakan properti color.",
+      "isactive": true,
+      "created_at": "2025-01-10",
+      "updated_at": "2025-01-10",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "3",
+      "sub_lesson_id": 9,
+      "code_question": "<p>Tuliskan query SELECT untuk mengambil semua data dari tabel siswa!</p>",
+      "image": null,
+      "score": 40,
+      "hint": "Gunakan SELECT * FROM nama_tabel.",
+      "isactive": true,
+      "created_at": "2025-01-10",
+      "updated_at": "2025-01-10",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "4",
+      "sub_lesson_id": 1,
+      "code_question": "<p>Tuliskan elemen heading h1 dengan teks 'Halo Dunia'!</p>",
+      "image": null,
+      "score": 30,
+      "hint": "Gunakan tag &lt;h1&gt;Halo Dunia&lt;/h1&gt;",
+      "isactive": true,
+      "created_at": "2025-01-10",
+      "updated_at": "2025-01-10",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "5",
+      "sub_lesson_id": 2,
+      "code_question": "<p>Buatlah tag paragraf p dengan teks 'Halo Antigravity'!</p>",
+      "image": null,
+      "score": 30,
+      "hint": "Gunakan tag &lt;p&gt;Halo Antigravity&lt;/p&gt;",
+      "isactive": true,
+      "created_at": "2025-01-10",
+      "updated_at": "2025-01-10",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "6",
+      "sub_lesson_id": 4,
+      "code_question": "<p>Buatlah CSS selector untuk menargetkan id 'header' dengan properti color bernilai red!</p>",
+      "image": null,
+      "score": 30,
+      "hint": "Gunakan #header { color: red; }",
+      "isactive": true,
+      "created_at": "2025-01-10",
+      "updated_at": "2025-01-10",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "7",
+      "sub_lesson_id": 6,
+      "code_question": "<p>Tulis properti CSS untuk membuat container menggunakan model Flexbox!</p>",
+      "image": null,
+      "score": 30,
+      "hint": "Gunakan display: flex;",
+      "isactive": true,
+      "created_at": "2025-01-10",
+      "updated_at": "2025-01-10",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "8",
+      "sub_lesson_id": 7,
+      "code_question": "<p>Bagaimana perintah untuk menginisialisasi project Node.js baru dengan NPM?</p>",
+      "image": null,
+      "score": 30,
+      "hint": "Gunakan perintah npm init.",
+      "isactive": true,
+      "created_at": "2025-01-10",
+      "updated_at": "2025-01-10",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "9",
+      "sub_lesson_id": 8,
+      "code_question": "<p>Tulis baris kode Express untuk menginisialisasi aplikasi Express.js dan menyimpannya di variabel app!</p>",
+      "image": null,
+      "score": 35,
+      "hint": "Gunakan const app = express();",
+      "isactive": true,
+      "created_at": "2025-01-10",
+      "updated_at": "2025-01-10",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "10",
+      "sub_lesson_id": 10,
+      "code_question": "<p>Tulis query SQL JOIN dasar untuk menghubungkan tabel siswa dan kelas berdasarkan kelas_id!</p>",
+      "image": null,
+      "score": 40,
+      "hint": "Gunakan JOIN kelas ON siswa.kelas_id = kelas.id",
+      "isactive": true,
+      "created_at": "2025-01-10",
+      "updated_at": "2025-01-10",
+      "user_create": 1,
+      "user_update": 1
+    }
+  ],
+  "essay_question": [
+    {
+      "id": "1",
+      "sub_lesson_id": 3,
+      "code_question_id": 1,
+      "essay_question": "<p>Apa fungsi atribut alt pada tag img?</p>",
+      "answer": "Menampilkan teks alternatif jika gambar gagal dimuat",
+      "answer_1": "Mengubah ukuran gambar",
+      "answer_2": "Menampilkan teks alternatif jika gambar gagal dimuat",
+      "answer_3": "Menambahkan border pada gambar",
+      "answer_4": "Mengatur posisi gambar",
+      "isactive": true,
+      "created_at": "2025-01-10",
+      "updated_at": "2025-01-10",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "2",
+      "sub_lesson_id": 3,
+      "code_question_id": 1,
+      "essay_question": "<p>Apa kepanjangan dari HTML?</p>",
+      "answer": "HyperText Markup Language",
+      "answer_1": "HyperText Markup Language",
+      "answer_2": "High Text Modern Language",
+      "answer_3": "HyperTransfer Markup Language",
+      "answer_4": "HyperText Modern Layout",
+      "isactive": true,
+      "created_at": "2025-01-10",
+      "updated_at": "2025-01-10",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "3",
+      "sub_lesson_id": 5,
+      "code_question_id": 2,
+      "essay_question": "<p>Properti CSS apa yang digunakan untuk mengubah warna teks?</p>",
+      "answer": "color",
+      "answer_1": "font-color",
+      "answer_2": "text-color",
+      "answer_3": "color",
+      "answer_4": "foreground",
+      "isactive": true,
+      "created_at": "2025-01-10",
+      "updated_at": "2025-01-10",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "4",
+      "sub_lesson_id": 9,
+      "code_question_id": 3,
+      "essay_question": "<p>Apa fungsi perintah SELECT * dalam SQL?</p>",
+      "answer": "Mengambil semua kolom dari tabel",
+      "answer_1": "Menghapus semua data",
+      "answer_2": "Mengambil semua kolom dari tabel",
+      "answer_3": "Menghitung jumlah baris",
+      "answer_4": "Memperbarui data tabel",
+      "isactive": true,
+      "created_at": "2025-01-10",
+      "updated_at": "2025-01-10",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "5",
+      "sub_lesson_id": 9,
+      "code_question_id": 3,
+      "essay_question": "<p>Clause apa yang digunakan untuk memfilter hasil query SQL?</p>",
+      "answer": "WHERE",
+      "answer_1": "FILTER",
+      "answer_2": "HAVING",
+      "answer_3": "WHERE",
+      "answer_4": "LIMIT",
+      "isactive": true,
+      "created_at": "2025-01-10",
+      "updated_at": "2025-01-10",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "6",
+      "sub_lesson_id": 1,
+      "code_question_id": 4,
+      "essay_question": "<p>Ada berapa tingkatan heading standar dalam spesifikasi HTML?</p>",
+      "answer": "6",
+      "answer_1": "3",
+      "answer_2": "6",
+      "answer_3": "8",
+      "answer_4": "10",
+      "isactive": true,
+      "created_at": "2025-01-10",
+      "updated_at": "2025-01-10",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "7",
+      "sub_lesson_id": 2,
+      "code_question_id": 5,
+      "essay_question": "<p>Tag apa yang digunakan untuk membuat baris baru (line break) di dalam sebuah paragraf HTML?</p>",
+      "answer": "<br>",
+      "answer_1": "<lb>",
+      "answer_2": "<br>",
+      "answer_3": "<newline>",
+      "answer_4": "<break>",
+      "isactive": true,
+      "created_at": "2025-01-10",
+      "updated_at": "2025-01-10",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "8",
+      "sub_lesson_id": 4,
+      "code_question_id": 6,
+      "essay_question": "<p>Simbol apakah yang digunakan di depan nama selector untuk menargetkan class dalam CSS?</p>",
+      "answer": "Titik (.)",
+      "answer_1": "Hashtag (#)",
+      "answer_2": "Titik (.)",
+      "answer_3": "Koma (,)",
+      "answer_4": "Persen (%)",
+      "isactive": true,
+      "created_at": "2025-01-10",
+      "updated_at": "2025-01-10",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "9",
+      "sub_lesson_id": 6,
+      "code_question_id": 7,
+      "essay_question": "<p>Properti CSS apa yang digunakan untuk menyelaraskan item secara vertikal dalam container Flexbox?</p>",
+      "answer": "align-items",
+      "answer_1": "justify-content",
+      "answer_2": "align-items",
+      "answer_3": "flex-direction",
+      "answer_4": "align-content",
+      "isactive": true,
+      "created_at": "2025-01-10",
+      "updated_at": "2025-01-10",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "10",
+      "sub_lesson_id": 7,
+      "code_question_id": 8,
+      "essay_question": "<p>Di mana Node.js mengeksekusi kode JavaScript?</p>",
+      "answer": "Di luar browser (server-side)",
+      "answer_1": "Di dalam browser Chrome saja",
+      "answer_2": "Di luar browser (server-side)",
+      "answer_3": "Hanya di browser Firefox",
+      "answer_4": "Di dalam database SQL",
+      "isactive": true,
+      "created_at": "2025-01-10",
+      "updated_at": "2025-01-10",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "11",
+      "sub_lesson_id": 8,
+      "code_question_id": 9,
+      "essay_question": "<p>Method HTTP apa yang biasanya digunakan untuk menambahkan data baru ke REST API?</p>",
+      "answer": "POST",
+      "answer_1": "GET",
+      "answer_2": "POST",
+      "answer_3": "PUT",
+      "answer_4": "DELETE",
+      "isactive": true,
+      "created_at": "2025-01-10",
+      "updated_at": "2025-01-10",
+      "user_create": 1,
+      "user_update": 1
+    },
+    {
+      "id": "12",
+      "sub_lesson_id": 10,
+      "code_question_id": 10,
+      "essay_question": "<p>Jenis JOIN apa yang hanya mengembalikan baris jika ada kecocokan di kedua tabel?</p>",
+      "answer": "INNER JOIN",
+      "answer_1": "LEFT JOIN",
+      "answer_2": "INNER JOIN",
+      "answer_3": "RIGHT JOIN",
+      "answer_4": "FULL JOIN",
+      "isactive": true,
+      "created_at": "2025-01-10",
+      "updated_at": "2025-01-10",
+      "user_create": 1,
+      "user_update": 1
+    }
+  ],
+  "t_code_answer": [
+    {
+      "id": "1",
+      "user_id": 5,
+      "code_question_id": 1,
+      "is_code_right": true,
+      "exploring_score": 28,
+      "isactive": true,
+      "created_at": "2025-02-01",
+      "updated_at": "2025-02-01",
+      "user_create": 5,
+      "user_update": 5
+    },
+    {
+      "id": "2",
+      "user_id": 6,
+      "code_question_id": 1,
+      "is_code_right": false,
+      "exploring_score": 0,
+      "isactive": true,
+      "created_at": "2025-02-01",
+      "updated_at": "2025-02-01",
+      "user_create": 6,
+      "user_update": 6
+    },
+    {
+      "id": "3",
+      "user_id": 7,
+      "code_question_id": 3,
+      "is_code_right": true,
+      "exploring_score": 38,
+      "isactive": true,
+      "created_at": "2025-02-05",
+      "updated_at": "2025-02-05",
+      "user_create": 7,
+      "user_update": 7
+    },
+    {
+      "id": "4",
+      "user_id": 9,
+      "code_question_id": 2,
+      "is_code_right": true,
+      "exploring_score": 30,
+      "isactive": true,
+      "created_at": "2025-02-10",
+      "updated_at": "2025-02-10",
+      "user_create": 9,
+      "user_update": 9
+    }
+  ],
+  "t_essay_answer": [
+    {
+      "id": "1",
+      "user_id": 5,
+      "essay_question_id": 1,
+      "answer": "Untuk menampilkan teks pengganti jika gambar tidak muncul, pak.",
+      "konteks_penjelasan": 20,
+      "keruntutan": 0,
+      "kebenaran": 0,
+      "teacher_notes": "",
+      "is_approved_by_teacher": true,
+      "isactive": true,
+      "created_at": "2025-02-01",
+      "updated_at": "2025-02-01",
+      "user_create": 5,
+      "user_update": 3
+    },
+    {
+      "id": "5",
+      "user_id": 5,
+      "essay_question_id": 2,
+      "answer": "cOBA IN DLUU",
+      "konteks_penjelasan": 0,
+      "keruntutan": 20,
+      "kebenaran": 0,
+      "teacher_notes": "",
+      "is_approved_by_teacher": true,
+      "isactive": true,
+      "created_at": "2025-02-01",
+      "updated_at": "2025-02-01",
+      "user_create": 5,
+      "user_update": 3
+    },
+    {
+      "id": "2",
+      "user_id": 6,
+      "essay_question_id": 2,
+      "answer": "HyperText Markup Language.",
+      "konteks_penjelasan": 20,
+      "keruntutan": 5,
+      "kebenaran": 5,
+      "teacher_notes": "Tepat!",
+      "is_approved_by_teacher": true,
+      "isactive": true,
+      "created_at": "2025-02-01",
+      "updated_at": "2025-02-01",
+      "user_create": 6,
+      "user_update": 3
+    },
+    {
+      "id": "3",
+      "user_id": 7,
+      "essay_question_id": 4,
+      "answer": "Mengambil semua data dari kolom yang ada di tabel tersebut.",
+      "konteks_penjelasan": 20,
+      "keruntutan": 4,
+      "kebenaran": 4,
+      "teacher_notes": "Cukup baik.",
+      "is_approved_by_teacher": true,
+      "isactive": true,
+      "created_at": "2025-02-05",
+      "updated_at": "2025-02-05",
+      "user_create": 7,
+      "user_update": 4
+    },
+    {
+      "id": "4",
+      "user_id": 9,
+      "essay_question_id": 3,
+      "answer": "Properti color pak.",
+      "konteks_penjelasan": 10,
+      "keruntutan": 3,
+      "kebenaran": 5,
+      "teacher_notes": "Benar, tapi kurang lengkap.",
+      "is_approved_by_teacher": "pending",
+      "isactive": true,
+      "created_at": "2025-02-10",
+      "updated_at": "2025-02-10",
+      "user_create": 9,
+      "user_update": 9
+    }
+  ],
+  "t_code_history_logs": [
+    {
+      "id": "1",
+      "user_id": 5,
+      "code_question_id": 1,
+      "time_count": 15,
+      "message": "Build successful! All tests passed.",
+      "is_error": false,
+      "isactive": true,
+      "created_at": "2025-02-01",
+      "updated_at": "2025-02-01",
+      "user_create": 5,
+      "user_update": 5
+    },
+    {
+      "id": "2",
+      "user_id": 6,
+      "code_question_id": 1,
+      "time_count": 120,
+      "message": "SyntaxError: Unexpected token on line 2.",
+      "is_error": true,
+      "isactive": true,
+      "created_at": "2025-02-01",
+      "updated_at": "2025-02-01",
+      "user_create": 6,
+      "user_update": 6
+    },
+    {
+      "id": "3",
+      "user_id": 6,
+      "code_question_id": 1,
+      "time_count": 200,
+      "message": "Build successful! All tests passed.",
+      "is_error": false,
+      "isactive": true,
+      "created_at": "2025-02-01",
+      "updated_at": "2025-02-01",
+      "user_create": 6,
+      "user_update": 6
+    },
+    {
+      "id": "4",
+      "user_id": 7,
+      "code_question_id": 3,
+      "time_count": 45,
+      "message": "Build successful! All tests passed.",
+      "is_error": false,
+      "isactive": true,
+      "created_at": "2025-02-05",
+      "updated_at": "2025-02-05",
+      "user_create": 7,
+      "user_update": 7
+    },
+    {
+      "id": "5",
+      "user_id": 9,
+      "code_question_id": 2,
+      "time_count": 30,
+      "message": "ReferenceError: variable 'color' is not defined.",
+      "is_error": true,
+      "isactive": true,
+      "created_at": "2025-02-10",
+      "updated_at": "2025-02-10",
+      "user_create": 9,
+      "user_update": 9
+    },
+    {
+      "id": "6",
+      "user_id": 9,
+      "code_question_id": 2,
+      "time_count": 55,
+      "message": "Build successful! All tests passed.",
+      "is_error": false,
+      "isactive": true,
+      "created_at": "2025-02-10",
+      "updated_at": "2025-02-10",
+      "user_create": 9,
+      "user_update": 9
+    }
+  ],
+  "permissions": [
+    {
+      "id": "1",
+      "name": "course.create",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "2",
+      "name": "course.read",
+      "role_ids": [
+        1,
+        2
+      ],
+      "isactive": true
+    },
+    {
+      "id": "3",
+      "name": "course.update",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "4",
+      "name": "course.delete",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "5",
+      "name": "course.active",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "6",
+      "name": "level.create",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "7",
+      "name": "level.read",
+      "role_ids": [
+        1,
+        2
+      ],
+      "isactive": true
+    },
+    {
+      "id": "8",
+      "name": "level.update",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "9",
+      "name": "level.delete",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "10",
+      "name": "level.active",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "11",
+      "name": "question.create",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "12",
+      "name": "question.read",
+      "role_ids": [
+        1,
+        2
+      ],
+      "isactive": true
+    },
+    {
+      "id": "13",
+      "name": "question.update",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "14",
+      "name": "question.delete",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "15",
+      "name": "question.active",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "16",
+      "name": "users.create",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "17",
+      "name": "users.read",
+      "role_ids": [
+        1,
+        2
+      ],
+      "isactive": true
+    },
+    {
+      "id": "18",
+      "name": "users.update",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "19",
+      "name": "users.delete",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "20",
+      "name": "users.active",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "21",
+      "name": "roles.create",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "22",
+      "name": "roles.read",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "23",
+      "name": "roles.update",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "24",
+      "name": "roles.delete",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "25",
+      "name": "roles.active",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "26",
+      "name": "kelas.create",
+      "role_ids": [
+        1,
+        2
+      ],
+      "isactive": true
+    },
+    {
+      "id": "27",
+      "name": "kelas.read",
+      "role_ids": [
+        1,
+        2
+      ],
+      "isactive": true
+    },
+    {
+      "id": "28",
+      "name": "kelas.update",
+      "role_ids": [
+        1,
+        2
+      ],
+      "isactive": true
+    },
+    {
+      "id": "29",
+      "name": "kelas.delete",
+      "role_ids": [
+        1,
+        2
+      ],
+      "isactive": true
+    },
+    {
+      "id": "30",
+      "name": "kelas.active",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "31",
+      "name": "approval.create",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "32",
+      "name": "approval.read",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "33",
+      "name": "approval.update",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "34",
+      "name": "approval.delete",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "35",
+      "name": "approval.active",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "36",
+      "name": "permission.create",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "37",
+      "name": "permission.read",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "38",
+      "name": "permission.update",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "39",
+      "name": "permission.delete",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "40",
+      "name": "permission.active",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "41",
+      "name": "report.create",
+      "role_ids": [
+        1,
+        2
+      ],
+      "isactive": true
+    },
+    {
+      "id": "42",
+      "name": "report.read",
+      "role_ids": [
+        1,
+        2
+      ],
+      "isactive": true
+    },
+    {
+      "id": "43",
+      "name": "report.update",
+      "role_ids": [
+        1,
+        2
+      ],
+      "isactive": true
+    },
+    {
+      "id": "44",
+      "name": "report.delete",
+      "role_ids": [
+        1,
+        2
+      ],
+      "isactive": true
+    },
+    {
+      "id": "45",
+      "name": "report.active",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "46",
+      "name": "leaderboard.create",
+      "role_ids": [
+        1,
+        2
+      ],
+      "isactive": true
+    },
+    {
+      "id": "47",
+      "name": "leaderboard.read",
+      "role_ids": [
+        1,
+        2
+      ],
+      "isactive": true
+    },
+    {
+      "id": "48",
+      "name": "leaderboard.update",
+      "role_ids": [
+        1,
+        2
+      ],
+      "isactive": true
+    },
+    {
+      "id": "49",
+      "name": "leaderboard.delete",
+      "role_ids": [
+        1,
+        2
+      ],
+      "isactive": true
+    },
+    {
+      "id": "50",
+      "name": "leaderboard.active",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "51",
+      "name": "badge.create",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "52",
+      "name": "badge.read",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "53",
+      "name": "badge.update",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "54",
+      "name": "badge.delete",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    },
+    {
+      "id": "55",
+      "name": "badge.active",
+      "role_ids": [
+        1
+      ],
+      "isactive": true
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
