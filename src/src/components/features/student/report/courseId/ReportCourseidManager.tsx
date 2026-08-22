@@ -40,7 +40,7 @@ export default function ReportCourseidManager() {
   const fetchReportData = async (studentId: number, cId: number) => {
     try {
       setLoading(true);
-      const res = await getStudentCourseReportApi(studentId, cId);
+      const res = await getStudentCourseReportApi(cId);
       setData(res);
     } catch (e) {
       console.error(e);

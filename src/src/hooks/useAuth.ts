@@ -39,11 +39,11 @@ export const useAuth = () => {
     const token =
       localStorage.getItem("token") || "";
 
-    return token
-      ? {
-        Authorization: `Bearer ${token}`,
-      }
-      : {};
+    return {
+      ...(token
+        ? { Authorization: `Bearer ${token}` }
+        : {}),
+    };
   }, []);
 
   const fetchUser = useCallback(async () => {

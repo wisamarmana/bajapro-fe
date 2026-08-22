@@ -37,7 +37,7 @@ export default function CourseManager() {
         try {
           const [allCourses, dashData] = await Promise.all([
             getAllCoursesApi(),
-            getStudentDashboardApi(currentUserId)
+            getStudentDashboardApi()
           ]);
 
           const eMap: Record<number, any> = {};

@@ -64,7 +64,7 @@ export async function GET(req: NextRequest) {
         where: { teacherId: Number(teacherId) },
         select: { id: true },
       });
-      const classIds = classesOfTeacher.map((c) => c.id);
+      const classIds = classesOfTeacher.map((c: { id: number }) => c.id);
       
       whereClause.OR = [
         { classId: { in: classIds } },

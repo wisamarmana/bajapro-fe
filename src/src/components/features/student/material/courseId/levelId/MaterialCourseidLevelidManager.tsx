@@ -719,7 +719,6 @@ export default function MaterialCourseidLevelidManager() {
       const totalPoints = 10 + codePts + essayPts; // 10 pts for wondering score
 
       await submitPracticeAnswersApi({
-        userId: studentId,
         courseId,
         subLessonId: activeSubLesson.id,
         codeQuestionId: activeSubLesson.codeQuestion ? Number(activeSubLesson.codeQuestion.id) : null,

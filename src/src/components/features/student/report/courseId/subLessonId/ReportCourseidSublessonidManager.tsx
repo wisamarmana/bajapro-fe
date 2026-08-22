@@ -39,7 +39,7 @@ export default function ReportCourseidSublessonidManager() {
   const fetchDetailData = async (studentId: number, cId: number, sId: number) => {
     try {
       setLoading(true);
-      const res = await getStudentSubLessonReportDetailApi(studentId, cId, sId);
+      const res = await getStudentSubLessonReportDetailApi(cId, sId);
       setData(res);
     } catch (e) {
       console.error(e);

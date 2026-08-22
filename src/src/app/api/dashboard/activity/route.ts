@@ -36,7 +36,7 @@ export async function GET(request: Request) {
 
       // Group by day
       const grouped: Record<string, number> = {};
-      logs.forEach(log => {
+      logs.forEach((log: { loginTime: Date }) => {
         const dateStr = log.loginTime.toISOString().split('T')[0];
         grouped[dateStr] = (grouped[dateStr] || 0) + 1;
       });
@@ -65,14 +65,14 @@ export async function GET(request: Request) {
         const teacherClasses = await prisma.class.findMany({
           where: { teacherId: Number(teacherId) }
         });
-        userWhere.classId = { in: teacherClasses.map(c => c.id) };
+        userWhere.classId = { in: teacherClasses.map((c: { id: number }) => c.id) };
       }
 
       const students = await prisma.user.findMany({
         where: userWhere,
         select: { id: true }
       });
-      const studentIds = students.map(s => s.id);
+      const studentIds = students.map((s: { id: number }) => s.id);
 
       let subLessonWhere: any = {};
       if (courseId && courseId !== 'all') {
@@ -92,9 +92,9 @@ export async function GET(request: Request) {
         }
       });
 
-      const data = subLessons.map(sl => {
+      const data = subLessons.map((sl: { id: number; title: string }) => {
         // How many students completed this sub lesson?
-        const completedCount = progresses.filter(p => p.subLessonId === sl.id).length;
+        const completedCount = progresses.filter((p: { subLessonId: number }) => p.subLessonId === sl.id).length;
         const totalStudents = studentIds.length || 1;
         const avg = Math.round((completedCount / totalStudents) * 100);
 

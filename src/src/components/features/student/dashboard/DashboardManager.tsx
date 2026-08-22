@@ -37,7 +37,7 @@ export default function DashboardManager() {
 
       const fetchUserAndData = async () => {
         try {
-          const res = await getStudentDashboardApi(authUser.id);
+          const res = await getStudentDashboardApi();
           setData(res);
           if (res.enrolledCount === 0) {
             setShowWelcomeModal(true);
