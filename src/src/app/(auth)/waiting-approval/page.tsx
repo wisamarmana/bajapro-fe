@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { Button, Typography, Result, Input, Card, message } from "antd";
 import { useRouter } from "next/navigation";
-import { signOut } from "next-auth/react";
 import { SearchOutlined } from "@ant-design/icons";
 
 const { Title, Text } = Typography;
@@ -107,8 +106,11 @@ export default function WaitingApprovalPage() {
           <Button 
             type="default" 
             block 
-            onClick={() => {
-              signOut({ callbackUrl: "/login" });
+            onClick={async () => {
+              try {
+                await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/logout`, { method: "POST", credentials: "include" });
+              } catch (e) {}
+              router.replace("/login");
             }}
           >
             Kembali ke Login

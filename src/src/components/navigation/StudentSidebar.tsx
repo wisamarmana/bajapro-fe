@@ -12,8 +12,7 @@ import {
 } from "@ant-design/icons";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { signOut } from "next-auth/react";
+import { usePathname, useRouter } from "next/navigation";
 
 const { Sider } = Layout;
 
@@ -31,9 +30,18 @@ const StudentSidebar: React.FC<StudentSidebarProps> = ({
   setMobileOpen,
 }) => {
   const pathname = usePathname();
+  const router = useRouter();
 
   const handleLogout = async () => {
-    await signOut({ callbackUrl: "/login" });
+    try {
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/logout`, {
+        method: "POST",
+        credentials: "include",
+      });
+    } catch (err) {
+      console.error(err);
+    }
+    router.replace("/login");
   };
 
   let activeKey = "dashboard";

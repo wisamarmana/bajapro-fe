@@ -6,7 +6,6 @@ import { usePathname, useRouter } from "next/navigation";
 import { DownOutlined, LogoutOutlined, UserOutlined, MenuOutlined } from "@ant-design/icons";
 import Link from "next/link";
 import Image from "next/image";
-import { useSession, signOut } from "next-auth/react";
 import { useAuth } from "@/src/hooks/useAuth";
 const { Header } = Layout;
 const { Text } = Typography;

@@ -6,7 +6,6 @@ import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-// import { signIn } from "next-auth/react";
 const { Title, Text } = Typography;
 
 interface LoginValues {

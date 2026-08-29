@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { jwtVerify } from "jose";
 
 const protectedRoutes = [
   "/dashboard",
@@ -16,7 +15,7 @@ const protectedRoutes = [
   "/badge",
 ];
 
-export async function middleware(request: NextRequest) {
+export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   const token = request.cookies.get("access_token")?.value;
@@ -25,15 +24,11 @@ export async function middleware(request: NextRequest) {
 
   if (token) {
     try {
-      const secret = new TextEncoder().encode(
-        process.env.JWT_SECRET || "secret"
-      );
-
-      const { payload } = await jwtVerify(token, secret);
-
-      user = payload;
+      const payloadBase64 = token.split(".")[1];
+      const decodedPayload = Buffer.from(payloadBase64, "base64").toString("utf-8");
+      user = JSON.parse(decodedPayload);
     } catch (err) {
-      console.log("JWT Invalid");
+      console.log("Failed to parse JWT payload");
     }
   }
 
