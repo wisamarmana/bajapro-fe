@@ -54,14 +54,14 @@ export const allMenuItems: MenuItem[] = [
         label: <Link href="/level">Level</Link>,
         icon: <DeploymentUnitOutlined />,
         roles: ["ADMIN"],
-        permission: "level.read",
+        permission: "m_levels.view",
       },
       {
         key: "course",
         label: <Link href="/course">Course</Link>,
         icon: <BlockOutlined />,
         roles: ["ADMIN", "PENGAJAR"],
-        permission: "course.read",
+        permission: "m_courses.view",
       },
       {
         key: "question",
@@ -89,14 +89,14 @@ export const allMenuItems: MenuItem[] = [
         label: <Link href="/kelas">Kelas</Link>,
         icon: <BankOutlined />,
         roles: ["ADMIN", "PENGAJAR"],
-        permission: "kelas.read",
+        permission: "classes.view",
       },
       {
         key: "users",
         label: <Link href="/users">Users</Link>,
         icon: <TeamOutlined />,
         roles: ["ADMIN", "PENGAJAR"],
-        permission: "users.read",
+        permission: "users.view",
       },
       {
         key: "approval",
@@ -107,14 +107,13 @@ export const allMenuItems: MenuItem[] = [
         ),
         icon: <AppstoreAddOutlined />,
         roles: ["ADMIN"],
-        permission: "approval.read",
       },
       {
         key: "permission",
         label: <Link href="/permission">Permission</Link>,
         icon: <SettingOutlined />,
         roles: ["ADMIN"],
-        permission: "permission.read",
+        permission: "permissions.view",
       },
     ],
   },
@@ -200,7 +199,14 @@ const Sidebar: React.FC<SidebarProps> = () => {
   const { can, user } = useAuth();
   const [pendingApprovalCount, setPendingApprovalCount] = useState(0);
 
-  const userRole = user?.role_id == 1 ? "ADMIN" : "PENGAJAR";
+  const userRole = user?.has_roles?.some(
+    (r: any) =>
+      r.id === 1 ||
+      String(r.name).toLowerCase() === "super" ||
+      String(r.name).toLowerCase() === "admin"
+  )
+    ? "ADMIN"
+    : "PENGAJAR";
 
   // Fetch pending approval count
   useEffect(() => {

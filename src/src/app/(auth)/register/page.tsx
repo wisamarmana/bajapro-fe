@@ -31,19 +31,6 @@ export default function RegisterPage() {
     try {
       const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "/api";
       
-      // 1. Cek apakah Permission 'approval.active' sedang aktif di database
-      let isApprovalNeeded = true;
-      try {
-        const permRes = await fetch(`${BASE_URL}/permissions?name=approval.active`, { credentials: "include" });
-        const perms = await permRes.json();
-        // Jika tidak ada permission approval.active atau exists tapi isactive-nya false
-        if (perms.length === 0 || perms[0].isactive === false) {
-          isApprovalNeeded = false;
-        }
-      } catch (e) {
-        console.error("Gagal cek status approval, fallback ke default (approve needed)");
-      }
-
       const newUser = {
         role_id: role === "Student" ? 3 : 2,
         class_id: null,
@@ -52,14 +39,13 @@ export default function RegisterPage() {
         email: values.email,
         password: values.password,
         nip: role === "Student" ? null : values.nip,
-        is_approved_by_admin: role === "Student" ? 1 : (isApprovalNeeded ? 0 : 1), 
         instansi_sekolah: role === "Student" ? "" : values.asal_instansi,
         isactive: true,
         created_at: new Date().toISOString().split('T')[0],
         updated_at: new Date().toISOString().split('T')[0],
       };
 
-      const res = await fetch(`${BASE_URL}/users`, {
+      const res = await fetch(`${BASE_URL}/auth/register`, {
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
@@ -74,7 +60,7 @@ export default function RegisterPage() {
           messageApi.success("Registrasi Siswa Berhasil!");
           router.push("/student/dashboard"); 
         } else {
-          if (isApprovalNeeded) {
+          if (true) {
             messageApi.success("Registrasi Pengajar Berhasil! Menunggu Persetujuan.");
             router.push("/waiting-approval"); 
           } else {
