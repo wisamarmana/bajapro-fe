@@ -1,5 +1,4 @@
-import React from "react";
-import ProfileManager from "@/src/components/features/profile/ProfileManager";
+import ProfileManager from "@/src/features/profile/ProfileManager";
 
 export const metadata = {
   title: "Profil Saya | BAJAPRO",

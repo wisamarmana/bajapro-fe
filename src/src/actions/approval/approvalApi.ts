@@ -67,19 +67,19 @@ let dummyData: TeacherRecord[] = [
 // 1. GET ALL (Ambil List Pengajar)
 export const fetchPengajarApi = async (): Promise<TeacherRecord[]> => {
   if (USE_REAL_API) {
-    const isJsonServer = BASE_URL.includes("3001");
+    const isJsonServer = BASE_URL.includes("5000");
     const endpoint = isJsonServer ? "/users?role_id=2" : "/admin/approval-pengajar";
     const data = await handleFetch(`${BASE_URL}${endpoint}`);
     
     if (isJsonServer) {
-      return data.map((u: any, index: number) => ({
+      return data.data.map((u: any, index: number) => ({
         key: u.id,
         no: index + 1,
         nama: u.name,
         email: u.email,
-        instansi: u.instansi_sekolah || "-",
+        instansi: u.school_instance || "-",
         nip: u.nip || "-",
-        is_approved_by_admin: u.is_approved_by_admin ?? 0,
+        approval: u.approval ?? 0,
       }));
     }
     return data;
@@ -91,11 +91,11 @@ export const fetchPengajarApi = async (): Promise<TeacherRecord[]> => {
 // 2. POST / PUT (APPROVE PENGAJAR)
 export const approvePengajarApi = async (keys: React.Key[]): Promise<void> => {
   if (USE_REAL_API) {
-    if (BASE_URL.includes("3001")) {
+    if (BASE_URL.includes("5000")) {
       await Promise.all(keys.map(key => 
         handleFetch(`${BASE_URL}/users/${String(key)}`, {
-          method: "PATCH",
-          body: JSON.stringify({ is_approved_by_admin: 1 })
+          method: "PUT",
+          body: JSON.stringify({ approval: 1 })
         })
       ));
     } else {
@@ -108,7 +108,7 @@ export const approvePengajarApi = async (keys: React.Key[]): Promise<void> => {
     return new Promise((resolve) => {
       setTimeout(() => {
         dummyData = dummyData.map((item) =>
-          keys.includes(item.key) ? { ...item, is_approved_by_admin: 1 } : item
+          keys.includes(item.key) ? { ...item, approval: 1 } : item
         );
         resolve();
       }, 300);
@@ -119,11 +119,11 @@ export const approvePengajarApi = async (keys: React.Key[]): Promise<void> => {
 // 3. POST / PUT (REJECT PENGAJAR)
 export const rejectPengajarApi = async (keys: React.Key[]): Promise<void> => {
   if (USE_REAL_API) {
-    if (BASE_URL.includes("3001")) {
+    if (BASE_URL.includes("5000")) {
       await Promise.all(keys.map(key => 
         handleFetch(`${BASE_URL}/users/${String(key)}`, {
-          method: "PATCH",
-          body: JSON.stringify({ is_approved_by_admin: 2 })
+          method: "PUT",
+          body: JSON.stringify({ approval: 2 })
         })
       ));
     } else {
@@ -136,7 +136,7 @@ export const rejectPengajarApi = async (keys: React.Key[]): Promise<void> => {
     return new Promise((resolve) => {
       setTimeout(() => {
         dummyData = dummyData.map((item) =>
-          keys.includes(item.key) ? { ...item, is_approved_by_admin: 2 } : item
+          keys.includes(item.key) ? { ...item, approval: 2 } : item
         );
         resolve();
       }, 300);

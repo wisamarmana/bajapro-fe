@@ -4,7 +4,7 @@ import React from "react";
 import { Table, Input, Select, Button, Typography, Tag, Space, Popconfirm } from "antd"; // Import Select
 import { SearchOutlined, CheckCircleOutlined, CloseCircleOutlined, FilterOutlined } from "@ant-design/icons";
 import { useApproval } from "@/src/hooks/approval/useApproval";
-import { TeacherRecord, ApprovalStatus } from "@/src/types/approval";
+import { TeacherRecord } from "@/src/types/approval";
 
 const { Title, Text } = Typography;
 
@@ -29,8 +29,8 @@ export const ApprovalTable = () => {
     {
       title: "Status",
       key: "status",
-      dataIndex: "is_approved_by_admin",
-      render: (status: ApprovalStatus) => {
+      dataIndex: "approval",
+      render: (status: number) => {
         if (status === 1) return <Tag color="success" style={{ borderRadius: 12, padding: "2px 12px" }}>Approve</Tag>;
         if (status === 2) return <Tag color="error" style={{ borderRadius: 12, padding: "2px 12px" }}>Reject</Tag>;
         return <Tag color="warning" style={{ borderRadius: 12, padding: "2px 12px", color: "#d97706", borderColor: "#fcd34d", background: "#fffbeb" }}>Pending</Tag>;
@@ -51,7 +51,7 @@ export const ApprovalTable = () => {
             size="small"
             style={{ backgroundColor: "#22c55e", borderColor: "#22c55e" }}
             onClick={() => handleRowApprove(record.key)}
-            disabled={record.is_approved_by_admin !== 0}
+            disabled={record.approval !== 0}
           >
             Approve
           </Button>
@@ -61,7 +61,7 @@ export const ApprovalTable = () => {
             icon={<CloseCircleOutlined />}
             size="small"
             onClick={() => handleRowReject(record.key)}
-            disabled={record.is_approved_by_admin !== 0}
+            disabled={record.approval !== 0}
           >
             Reject
           </Button>

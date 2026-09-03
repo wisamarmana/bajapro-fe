@@ -1,4 +1,4 @@
-import { ManageCourseMateri } from "@/src/components/features/course/ManageCourseTab";
+import { ManageCourseMateri } from "@/src/features/course/ManageCourseTab";
 
 export default function EditCoursePage() {
 

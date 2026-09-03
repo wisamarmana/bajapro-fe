@@ -1,4 +1,4 @@
-import Filter from "@/src/components/features/report/Filter";
+import Filter from "@/src/features/report/Filter";
 
 export default function ReportPage() {
   return (

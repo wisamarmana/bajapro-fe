@@ -1,5 +1,5 @@
-import ListCourse  from "@/src/components/features/course/CourseTable";
 import { fetchCoursesApi } from "@/src/actions/course/courseApi"; // Pastikan fungsi ini bisa jalan di server
+import ListCourse from "@/src/features/course/CourseTable";
 
 export default async function CoursePage() {
   

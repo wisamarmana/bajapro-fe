@@ -1,4 +1,4 @@
-import UserProgress from "@/src/components/features/report/UserProgress";
+import UserProgress from "@/src/features/report/UserProgress";
 
 export default async function UserProgressPage({ params }: { params: Promise<{ classId: string, userId: string }> }) {
   const resolvedParams = await params;

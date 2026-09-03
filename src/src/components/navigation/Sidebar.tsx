@@ -211,11 +211,11 @@ const Sidebar: React.FC<SidebarProps> = () => {
   // Fetch pending approval count
   useEffect(() => {
     if (userRole === "ADMIN") {
-      fetch(`${process.env.NEXT_PUBLIC_API_URL || '/api'}/admin/approval-pengajar?t=${Date.now()}`, { cache: 'no-store', credentials: 'include' })
+      fetch(`${process.env.NEXT_PUBLIC_API_URL || '/api'}/users?role_id=2`, { cache: 'no-store', credentials: 'include' })
         .then(res => res.json())
         .then(data => {
           if (Array.isArray(data)) {
-            const pending = data.filter((item: any) => item.is_approved_by_admin === 0);
+            const pending = data.filter((item: any) => item.approval === 0);
             setPendingApprovalCount(pending.length);
           }
         })

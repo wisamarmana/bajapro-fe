@@ -1,5 +1,4 @@
-import React from "react";
-import BadgeManager from "@/src/components/features/BadgeManager";
+import BadgeManager from "@/src/features/BadgeManager";
 
 export default function BadgePage() {
   return <BadgeManager />;

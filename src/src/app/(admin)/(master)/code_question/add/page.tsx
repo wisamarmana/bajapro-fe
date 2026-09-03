@@ -1,4 +1,4 @@
-import QuestionForm from "@/src/components/features/code_question/QuestionForm";
+import QuestionForm from "@/src/features/code_question/QuestionForm";
 
 export default function AddQuestionPage() {
   return (

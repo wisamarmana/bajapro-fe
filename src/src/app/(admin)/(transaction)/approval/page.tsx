@@ -1,5 +1,4 @@
-import React from "react";
-import ApprovalManager from "@/src/components/features/approval/ApprovalManager";
+import ApprovalManager from "@/src/features/approval/components/ApprovalManager";
 
 export default function ApprovalPage() {
   return <ApprovalManager />;

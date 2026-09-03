@@ -1,12 +1,11 @@
 "use client";
 
-import React from "react";
-import { Typography, Row, Col } from "antd";
+import { ActiveClassesTable } from "@/src/features/dashboard/ActiveClassesTable";
+import { ActivityChart } from "@/src/features/dashboard/ActivityChart";
+import { ApprovalList } from "@/src/features/dashboard/ApprovalList";
+import { StatCards } from "@/src/features/dashboard/StatCards";
 import { useDashboard } from "@/src/hooks/dashboard/useDashboard";
-import { StatCards } from "@/src/components/features/dashboard/StatCards";
-import { ActivityChart } from "@/src/components/features/dashboard/ActivityChart";
-import { ApprovalList } from "@/src/components/features/dashboard/ApprovalList";
-import { ActiveClassesTable } from "@/src/components/features/dashboard/ActiveClassesTable";
+import { Col, Row, Typography } from "antd";
 
 const { Title } = Typography;
 

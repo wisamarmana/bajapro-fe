@@ -1,6 +1,6 @@
 "use client";
 
-import { ApprovalTable } from "@/src/components/features/approval/ApprovalTable";
+import { ApprovalTable } from "@/src/features/approval/components/ApprovalTable";
 
 export default function ApprovalManager() {
   return (

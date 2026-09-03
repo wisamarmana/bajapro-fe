@@ -1,10 +1,9 @@
 "use client";
 
-import React from "react";
-import { Typography, Select, Radio } from "antd";
+import { LeaderboardTable } from "@/src/features/leaderboard/LeaderboardTable";
+import { Top3Cards } from "@/src/features/leaderboard/Top3Cards";
 import { useLeaderboard } from "@/src/hooks/leaderboard/useLeaderboard";
-import { Top3Cards } from "@/src/components/features/leaderboard/Top3Cards";
-import { LeaderboardTable } from "@/src/components/features/leaderboard/LeaderboardTable";
+import { Radio, Select, Typography } from "antd";
 
 const { Title, Text } = Typography;
 

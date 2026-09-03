@@ -1,5 +1,4 @@
-import React from "react";
-import LevelManager from "@/src/components/features/level/LevelManager";
+import LevelManager from "@/src/features/level/LevelManager";
 
 export default function LevelPage() {
   return <LevelManager />;

@@ -1,4 +1,4 @@
-import UserAnswerForm from "@/src/components/features/report/UserAnswerForm";
+import UserAnswerForm from "@/src/features/report/UserAnswerForm";
 
 export default async function DetailAnswerPage({ params }: { params: Promise<{ classId: string, userId: string, id: string }> }) {
   const resolvedParams = await params;

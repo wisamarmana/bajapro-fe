@@ -1,5 +1,4 @@
-import React from "react";
-import LeaderboardManager from "@/src/components/features/leaderboard/LeaderboardManager";
+import LeaderboardManager from "@/src/features/leaderboard/LeaderboardManager";
 
 export default function LeaderboardPage() {
   return <LeaderboardManager />;

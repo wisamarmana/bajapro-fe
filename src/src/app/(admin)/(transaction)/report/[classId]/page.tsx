@@ -1,5 +1,5 @@
+import ClassTable from "@/src/features/report/ClassTable";
 import { Suspense } from "react"; // 1. Import Suspense dari React
-import ClassTable from "@/src/components/features/report/ClassTable";
 
 export default async function ClassListPage({ 
   params 

@@ -1,30 +1,30 @@
 "use client";
 
-import React, { useState } from "react";
-import { 
-  Card, 
-  Modal, 
-  Form, 
-  Input, 
-  Select, 
-  Typography, 
-  Button, 
-  Space, 
-  Popover, 
-  Descriptions, 
-  Tag,
-  Table
-} from "antd";
-import { 
-  PlusOutlined, 
-  SearchOutlined, 
-  FilterOutlined, 
-  ThunderboltOutlined 
-} from "@ant-design/icons";
+import { ClassTable } from "@/src/features/kelas/ClassTable";
 import { useClass } from "@/src/hooks/kelas/useClass";
-import { ClassData } from "@/src/types/kelas";
-import { ClassTable } from "@/src/components/features/kelas/ClassTable";
 import { useAuth } from "@/src/hooks/useAuth";
+import { ClassData } from "@/src/types/kelas";
+import {
+    FilterOutlined,
+    PlusOutlined,
+    SearchOutlined,
+    ThunderboltOutlined
+} from "@ant-design/icons";
+import {
+    Button,
+    Card,
+    Descriptions,
+    Form,
+    Input,
+    Modal,
+    Popover,
+    Select,
+    Space,
+    Table,
+    Tag,
+    Typography
+} from "antd";
+import { useState } from "react";
 
 const { Title } = Typography;
 

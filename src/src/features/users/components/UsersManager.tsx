@@ -1,27 +1,27 @@
 "use client";
 
-import React, { useState } from "react";
-import {
-  Card,
-  Modal,
-  Form,
-  Input,
-  Select,
-  Typography,
-  Button,
-  Space,
-  Popover,
-  Descriptions,
-} from "antd";
-import {
-  PlusOutlined,
-  SearchOutlined,
-  FilterOutlined,
-} from "@ant-design/icons";
+import { UserTable } from "@/src/features/users/components/UsersTable";
+import { useAuth } from "@/src/hooks/useAuth";
 import { useUser } from "@/src/hooks/users/useUsers";
 import { UserData } from "@/src/types/users";
-import { UserTable } from "@/src/components/features/users/UsersTable";
-import { useAuth } from "@/src/hooks/useAuth";
+import {
+    FilterOutlined,
+    PlusOutlined,
+    SearchOutlined,
+} from "@ant-design/icons";
+import {
+    Button,
+    Card,
+    Descriptions,
+    Form,
+    Input,
+    Modal,
+    Popover,
+    Select,
+    Space,
+    Typography,
+} from "antd";
+import { useState } from "react";
 
 const { Title } = Typography;
 

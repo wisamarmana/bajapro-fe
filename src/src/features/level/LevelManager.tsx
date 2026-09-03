@@ -1,39 +1,39 @@
 "use client";
 
-import React, { useState } from "react";
+import { LevelTable } from "@/src/features/level/LevelTable";
+import { useLevel } from "@/src/hooks/level/useLevel";
+import { LevelData } from "@/src/types/level";
 import {
-  Card,
-  Modal,
-  Form,
-  Input,
-  Typography,
-  Descriptions,
-  Tag,
-  Button,
+    Button,
+    Card,
+    Descriptions,
+    Form,
+    Input,
+    Modal,
+    Typography
 } from "antd";
-import { RoleTable } from "@/src/components/features/roles/RoleTable";
-import { useRole } from "@/src/hooks/roles/useRole";
-import { RoleData } from "@/src/types/roles";
+import { useState } from "react";
 
 const { Title } = Typography;
+const { TextArea } = Input;
 
-export default function RolesManager() {
+export default function LevelManager() {
   const {
-    roles,
+    levels,
     loading,
-    addRole,
-    editRole,
-    fetchRoleById,
+    addLevel,
+    editLevel,
+    fetchLevelById,
     contextHolder,
-    deleteRole,
-  } = useRole();
+    deleteLevel,
+  } = useLevel();
   const [form] = Form.useForm();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMode, setModalMode] = useState<"add" | "edit" | "view">("add");
   const [selectedId, setSelectedId] = useState<string | number | null>(null);
 
-  const [viewData, setViewData] = useState<RoleData | null>(null);
+  const [viewData, setViewData] = useState<LevelData | null>(null);
 
   const handleAction = async (action: "add" | "edit" | "view", id?: string | number) => {
     setModalMode(action);
@@ -42,12 +42,13 @@ export default function RolesManager() {
     setIsModalOpen(true); // Buka pop-up segera
 
     if (action === "edit" && id) {
-      const dataLama = await fetchRoleById(id);
+      const dataLama = await fetchLevelById(id);
       if (dataLama) {
         setTimeout(() => {
           form.resetFields();
           form.setFieldsValue({
-            roleName: dataLama.role_name,
+            levelName: dataLama.level_name,
+            description: dataLama.deskripsi,
           });
         }, 50);
       }
@@ -57,7 +58,7 @@ export default function RolesManager() {
         form.resetFields();
       }, 50);
     } else if (action === "view" && id) {
-      const dataLama = await fetchRoleById(id);
+      const dataLama = await fetchLevelById(id);
       setViewData(dataLama || null);
     }
   };
@@ -69,9 +70,9 @@ export default function RolesManager() {
       let success = false;
 
       if (modalMode === "add") {
-        success = await addRole(values);
+        success = await addLevel(values);
       } else if (modalMode === "edit" && selectedId) {
-        success = await editRole(selectedId, values);
+        success = await editLevel(selectedId, values);
       }
 
       if (success) {
@@ -85,26 +86,26 @@ export default function RolesManager() {
   // Judul modal berubah-ubah sesuai aksi yang diklik
   const modalTitle =
     modalMode === "add"
-      ? "Tambah Role"
+      ? "Tambah Level"
       : modalMode === "edit"
-        ? "Edit Role"
-        : "Detail Role";
+        ? "Edit Level"
+        : "Detail Level";
 
   return (
     <div style={{ padding: "24px" }}>
       {contextHolder}
       <Card style={{ borderRadius: "12px", padding: "12px" }}>
         <Title level={3} style={{ marginBottom: "8px" }}>
-          List Role
+          List Level
         </Title>
         <p style={{ color: "gray", marginBottom: "24px" }}>
-          Kelola role untuk menentukan tingkat akses pengguna
+          Kelola level untuk menentukan tingkat kesulitan materi
         </p>
-        <RoleTable
-          data={roles}
+        <LevelTable
+          data={levels}
           loading={loading}
           onAction={handleAction}
-          onDelete={deleteRole}
+          onDelete={deleteLevel}
         />
       </Card>
 
@@ -144,8 +145,11 @@ export default function RolesManager() {
         {modalMode === "view" ? (
           viewData ? (
             <Descriptions column={1} bordered style={{ marginTop: "24px" }}>
-              <Descriptions.Item label="Nama Role">
-                <strong>{viewData.role_name}</strong>
+              <Descriptions.Item label="Nama Level">
+                <strong>{viewData.level_name}</strong>
+              </Descriptions.Item>
+              <Descriptions.Item label="Deskripsi">
+                {viewData.deskripsi}
               </Descriptions.Item>
             </Descriptions>
           ) : (
@@ -154,11 +158,18 @@ export default function RolesManager() {
         ) : (
           <Form form={form} layout="vertical" style={{ marginTop: "24px" }}>
             <Form.Item
-              label="Nama Role"
-              name="roleName"
-              rules={[{ required: true, message: "Nama role wajib diisi!" }]}
+              label="Nama Level"
+              name="levelName"
+              rules={[{ required: true, message: "Nama level wajib diisi!" }]}
             >
               <Input placeholder="Type here" size="large" />
+            </Form.Item>
+            <Form.Item
+              label="Deskripsi"
+              name="description"
+              rules={[{ required: true, message: "Deskripsi wajib diisi!" }]}
+            >
+              <TextArea placeholder="Type here" rows={4} size="large" />
             </Form.Item>
           </Form>
         )}
